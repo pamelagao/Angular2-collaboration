@@ -1,0 +1,17 @@
+<h2>{{ title }}</h2>
+
+<div>
+  <div  *ngFor="let s of students" id="{{ s.id }}" class="student-info">
+  	<h3>{{ s.firstName }} {{ s.lastName }}</h3>
+    <p>ID: {{ s.id }}</p>
+    <p>Birthday: {{ s.dateOfBirth }}</p>
+    <div>
+    	<p>Programs:</p>
+    	<ul>
+    		<li *ngFor="let p of s.programs">
+    			{{ p }}
+    		</li>
+    	</ul>
+    </div>
+  </div>
+</div>
