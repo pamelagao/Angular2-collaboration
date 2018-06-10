@@ -1,0 +1,13 @@
+<h2>{{ title }}</h2>
+
+<div>
+  <div  *ngFor="let c of courses" id="{{ c.id }}" class="course-info">
+    <div><span class="lbl">ID:</span> {{ c.id }}</div>
+    <div><span class="lbl">Course Name:</span> {{ c.name }}</div>
+    <div><span class="lbl">Course Time:</span> {{ c.start_time | date:'shortTime' }} - {{ c.end_time | date:'shortTime' }}</div>
+    <div><span class="lbl">Instructor:</span> {{ c.instructor[0] }}</div>
+    <div><span class="lbl">Cotact:</span> {{ c.instructor[1] }}</div>
+    <div *ngIf="c.start"><span class="lbl">Status:</span> Course is beginning</div>
+    <div *ngIf="!c.start"><span class="lbl">Status:</span> Course will begin soon</div>
+  </div>
+</div>
